@@ -1,30 +1,24 @@
 # Hate Speech Detection using Machine Learning
-
 # Importing libraries
 import pandas as pd
 import numpy as np
 import re
 import nltk
 import string
-
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
-
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score
-
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 
 # Download stopwords (only first time)
-
 nltk.download('stopwords')
 # Load Dataset
 dataset = pd.read_csv("twitter.csv")
-
 print("\nFirst 5 Rows:")
 print(dataset.head())
 
@@ -84,7 +78,6 @@ cv = CountVectorizer()
 X = cv.fit_transform(X)
 
 # Train Test Split
-
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     Y,
@@ -108,7 +101,6 @@ print(accuracy_score(y_test, y_pred))
 
 
 # Confusion Matrix
-
 plt.figure(figsize=(6, 5))
 sns.heatmap(cm, annot=True, fmt="d", cmap="YlGnBu")
 plt.title("Confusion Matrix")
@@ -118,8 +110,6 @@ plt.show()
 
 
 # Testing Custom Sentences
-
-
 while True:
 
     sample = input("\nEnter a sentence (or type exit): ")
