@@ -7,7 +7,6 @@ This project uses the **Twitter Hate Speech and Offensive Language Dataset**, a 
 * **2 – Neither Hate Speech nor Offensive Language**
 
 The dataset (`twitter.csv`) is loaded and processed using the **Pandas** library. Text preprocessing is performed with **NLTK**, where tweets are converted to lowercase, and URLs, punctuation, numbers, and stopwords are removed. Stemming is applied to reduce words to their root form, improving the consistency of the data.
-
 The cleaned text is then transformed into numerical features using **CountVectorizer** from **Scikit-learn**. A **Decision Tree Classifier** is trained on these features to learn patterns from the dataset and classify new user-provided text. The model's performance is evaluated using **Accuracy Score** and a **Confusion Matrix**, with visualization provided through **Matplotlib** and **Seaborn**.
 
 ### Libraries Used
